@@ -1,0 +1,39 @@
+\makeatletter
+\patchcmd{\@footnotetext}{\footnotesize}{\scriptsize}{}{}
+\makeatother
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
+
+%\providecommand{\JEL}[1]
+%{
+ % \small	
+ % \textbf{JEL Codes: } #1
+%}
+
+% Title and author information
+\title{Redistributing Wealth.\\
+Limits and promises of wealth taxation and redistribution}
+
+% Authors with affiliations in smaller font, centered below the names
+\author{
+    author one\textsuperscript{a,b,c} 
+    \and 
+    author two\textsuperscript{c} \\
+    \and
+    author three \textsuperscript{d}
+    {\scriptsize \centering \parbox[t]{0.8\textwidth}{\centering 
+    a affil one \\ 
+    b affil two\\ 
+    c affil three \\
+    d affil four}}
+}
+
+\date{\today\thanks{\scriptsize Thank you notes.}}
+
+
+

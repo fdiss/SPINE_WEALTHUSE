@@ -1,0 +1,182 @@
+\usepackage[onehalfspacing]{setspace} 
+% Package for rotating elements, such as tables and figures
+\usepackage{rotating}
+
+%\setlength{\parindent}{1cm}
+% % Character encoding and font settings 
+%\usepackage[utf8]{inputenc}      % UTF-8 character encoding % in lualatex und xelatex nicht nötig
+\usepackage[T1]{fontenc}         % Modern font encoding
+\usepackage[sc]{mathpazo}        % 
+\usepackage[english]{babel}      % Language settings
+\usepackage{scalefnt}            % Provides commands to scale fonts
+
+
+% Typographical enhancements
+\usepackage[letterspace=25]{microtype}           % Improve document appearance and readability
+
+\usepackage{xspace}              % Intelligent spacing after macros
+\usepackage{bm}                  % Bold symbols
+\usepackage{paralist}            % Extends the functionality of the standard list environments.
+\usepackage[right]{eurosym}      % Place Euro Symol on the right.
+\usepackage{enumitem}            % Package for customizing the appearance and behavior of lists (itemize, enumerate, etc.)
+
+% Placeholder text
+\usepackage{lipsum}              % Dummy text (Lorem Ipsum)
+
+% Quotations and citations
+\usepackage{csquotes}            % Automatic adjustment of quotation marks
+\usepackage{breakcites}          % Split long citations across lines
+\usepackage{endnotes}            % Package for managing endnotes, which are footnotes collected at the end of a document
+\usepackage[nottoc]{tocbibind}   % Include "References" in the table of contents
+\usepackage[title,titletoc,toc]{appendix} % Appendices handling
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Enumerate %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% That is a code, so that in an enumerate environment, there is 1.1 oder 1.1.1 instead of (a) and (b).
+\renewcommand{\labelenumii}{\arabic{enumi}.\arabic{enumii}}
+\renewcommand{\labelenumiii}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}}
+\renewcommand{\labelenumiv}{\arabic{enumi}.\arabic{enumii}.\arabic{enumiii}.\arabic{enumiv}}
+
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Colors and Figures %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Colors and hyperref settings
+\usepackage{color, colortbl}
+\usepackage[svgnames, dvipsnames]{xcolor}     % Predefined SVG color names
+
+\definecolor{linkblue}{HTML}{6594C2}
+
+\usepackage[colorlinks=true,allcolors=linkblue]{hyperref}
+\usepackage{etoolbox}
+
+% \definecolor{olive}{RGB}{139,0,0} % Define color for hyperlinks
+% \usepackage[colorlinks=true,linkcolor=olive,citecolor=olive,urlcolor=olive]{hyperref} % Hyperlinks
+
+% Figures and graphics
+\usepackage{graphicx}            % Include graphics
+\usepackage{wrapfig}             % Package for wrapping text around figures
+\graphicspath{{./images/}}       % Path to graphics
+\usepackage{array}               % Enhanced array and tabular environments
+\usepackage{fancyhdr}            % Custom headers
+\setlength{\headheight}{15pt}    % Set header height
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Mathematics %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mathematical enhancements
+\usepackage{breqn}               % Automatic line breaks in equations
+\usepackage{amsmath}             % Basic math package
+\usepackage{empheq}              % Emphasized equations
+\usepackage{bbm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Tables %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Table enhancements
+\usepackage{array}               % Additional table features
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}} % New column type L
+\usepackage{booktabs}            % Professional-quality tables
+\usepackage{adjustbox}           % Adjust box sizes
+\usepackage{lscape}              % Rotate tables to landscape
+\usepackage{pdflscape}           % Full page landscape
+\usepackage{dcolumn}             % Align on decimal points
+\usepackage{tabularx}            % Flexible tables
+\usepackage{siunitx}             % Align numbers in tables
+\sisetup{input-ignore={,},       
+    group-minimum-digits = 4,
+    group-digits=integer,
+     group-separator={,},
+     input-decimal-markers={.}, 
+     output-decimal-marker = {.},
+     input-signs              = + -,
+     input-symbols         = {()}}           
+\usepackage{longtable}           % Tables across multiple pages
+\usepackage{threeparttable}      % Tables with title, body, and notes
+\usepackage{caption}             % Custom captions
+\captionsetup[table]{labelsep=space,justification=raggedright,singlelinecheck=false} % Table captions settings
+
+\usepackage{multirow}            % Multi-row cells in tables
+\usepackage{subcaption}          % Sub-figures and sub-tables
+\usepackage{morefloats}          % Package for handling more floating objects
+%\usepackage{floatrow}            % Package for customizing the appearance and placement of floats (figures and tables)
+%\floatsetup[table]{capposition=top} % When using floatrow, then caption of tables are placed bellow. using floatsetup places caption on top of tables.
+\usepackage{makecell}            % Package for creating multi-line cells and headers in tables
+\usepackage{vcell}
+\usepackage{ragged2e}
+\usepackage{tabularray}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% tikz and gant %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{standalone}          % Package that allows standalone compilation of TikZ figures
+\usepackage{pgfgantt}            % Package for creating Gantt charts, which are used in project management to illustrate project schedules
+\usepackage{animate}             % Package for creating animations
+\usetikzlibrary{arrows}          % TikZ library for adding arrow styles to diagrams
+\usetikzlibrary{shapes}          % TikZ library for adding predefined shapes to diagrams
+\usetikzlibrary{trees}           % TikZ library for creating trees
+\usetikzlibrary{positioning}     % TikZ library for positioning elements in diagrams
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% R-Code Implementation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Code listing and syntax highlighting
+\usepackage{listings}            % Include and format source code
+\lstset{language=R,              % R language settings
+    basicstyle=\small\ttfamily,
+    stringstyle=\color{DarkGreen},
+    otherkeywords={0,1,2,3,4,5,6,7,8,9},
+    morekeywords={TRUE,FALSE},
+    deletekeywords={data,frame,length,as,character},
+    keywordstyle=\color{olive},
+    commentstyle=\color{DarkGreen},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[citestyle=authoryear,
+bibstyle=authoryear,
+maxnames=8,
+maxcitenames=2,
+autocite=footnote,
+backend=biber,
+% natbib=true,
+giveninits=true,
+doi=true,
+uniquename=false,
+url=true,
+uniquelist=false,
+isbn=true]{biblatex}
+\renewcommand*{\bibhang}{15pt}
+\renewcommand*{\bibitemsep}{5pt}
+  \DeclareFieldFormat[article]{title}{#1}
+  \DeclareFieldFormat{titlecase}{#1}
+  \DeclareFieldFormat{pages}{#1}
+  \DeclareFieldFormat[incollection]{title}{#1}
+  \DeclareFieldFormat[inbook]{title}{#1}
+
+
+\renewcommand\bibfont{\small}
+\AtEveryBibitem{%
+  \clearfield{abstract}
+  \ifentrytype{report}{}{% Remove url except for @online
+    \clearfield{url}
+  }
+}
+
+\AtEveryBibitem{\clearfield{note}\clearfield{month}\clearlist{language}}
+\addbibresource{../refs_wealth_tax.bib}
+
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+  
